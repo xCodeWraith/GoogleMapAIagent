@@ -1,348 +1,366 @@
-# 🗺️ Google Haritalar AI Ajanı
+🗺️ Google Maps AI Agent
 
-[![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![n8n](https://img.shields.io/badge/n8n-Otomasyon-orange)](https://n8n.io/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-blue)](https://openai.com/)
-[![AI Destekli](https://img.shields.io/badge/AI-Konuşmalı-brightgreen)](https://github.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![n8n](https://img.shields.io/badge/Workflow-n8n-orange)](https://n8n.io/)
+[![OpenAI](https://img.shields.io/badge/AI-GPT--4o-blue)](https://openai.com/)
+[![AI Powered](https://img.shields.io/badge/AI-Conversational-brightgreen)](https://github.com)
 
-> 💥 **xCodeWraith tarafından geliştirildi**
+> 💥 **Developed by xCodeWraith**
 
-> **Doğal dil sohbeti ile Google Haritalar'dan işletme potansiyel müşterilerini çıkaran ve zenginleştiren konuşmalı AI ajanı.**
 
-AI ile basitçe sohbet edin: "Los Angeles'ta 100 diş kliniği bul" ve otomatik olarak verileri toplamasını, zenginleştirmesini ve Google Sheets'e düzenlemesini izleyin.
+> **A conversational AI agent that extracts, enriches, and organizes business leads from Google Maps using natural language.**
 
----
-
-## 📋 İçindekiler
-
-- [Genel Bakış](#-genel-bakış)
-- [Temel Özellikler](#-temel-özellikler)
-- [Nasıl Çalışır](#-nasıl-çalışır)
-- [Teknoloji Yığını](#-teknoloji-yığını)
-- [Gereksinimler](#-gereksinimler)
-- [Kurulum](#-kurulum)
-- [Yapılandırma](#-yapılandırma)
-- [Kullanım Örnekleri](#-kullanım-örnekleri)
-- [Veri Alanları](#-veri-alanları)
-- [Sorun Giderme](#-sorun-giderme)
-- [Lisans](#-lisans)
+Simply chat with the AI: *"Find 100 dental clinics in Los Angeles"* and watch it automatically scrape, enrich, and organize the data into Google Sheets.
 
 ---
 
-## 🎯 Genel Bakış
+## 📋 Table of Contents
 
-**Google Haritalar AI Ajanı**, Google Haritalar'ı güçlü bir B2B potansiyel müşteri oluşturma aracına dönüştüren akıllı bir konuşma sistemidir. Manuel olarak işletme verilerini aramak ve kopyalamak yerine, gereksinimlerinizi anlayan ve tüm süreci otomatikleştiren bir AI ajanı ile sohbet edin.
-
-### Bu Sistemi Özel Kılan Nedir?
-
-- 🤖 **Doğal Dil Arayüzü** - İnsan bir asistanla konuşur gibi doğal sohbet
-- 🧠 **AI Destekli Anlama** - GPT-4o isteklerinizi akıllıca yorumlar
-- 🔄 **Otomatik Zenginleştirme** - E-postaları ve şirket geçmişlerini otomatik bulur
-- 📊 **Akıllı Organizasyon** - Google Sheets'te verileri mükemmel şekilde yapılandırır
-- ⚡ **Gerçek Zamanlı İşleme** - Sohbet ederken potansiyel müşterilerin dolmasını izleyin
-
-### Bu Kimler İçin?
-
-| Hedef Kitle | Kullanım |
-|-------------|----------|
-| 💼 **Satış Ekipleri** | Konum ve nişe göre hedefli potansiyel müşteri listeleri |
-| 📞 **Soğuk Aramacılar** | Telefon numaralarını ve işletme bilgilerini anında alın |
-| 📧 **E-posta Pazarlamacıları** | E-posta zenginleştirmesi ile iletişim bilgileri |
-| 🏢 **B2B Ajansları** | Müşteriler için yerel işletme araştırması |
-| 🚀 **Girişimciler** | Potansiyel müşteriler veya ortaklar bulun |
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [How It Works](#-how-it-works)
+- [Tech Stack](#-tech-stack)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Usage Examples](#-usage-examples)
+- [Data Fields](#-data-fields)
+- [Troubleshooting](#-troubleshooting)
+- [License](#-license)
 
 ---
 
-## ✨ Temel Özellikler
+## 🎯 Overview
 
-### 🗣️ Konuşma Arayüzü
-- Doğal dil girişi: "NYC'de 50 restoran bul"
-- Karmaşık formlar veya parametreler yok
-- AI bağlamı ve niyeti anlıyor
-- Çok turlu konuşmalar
+**Google Maps AI Agent** is an intelligent conversational system that transforms Google Maps into a powerful B2B lead generation tool. Instead of manually searching and copying business data, simply chat with an AI agent that understands your requirements and automates the entire process.
 
-### 🔍 Akıllı Google Haritalar Kazıma
-- Serper.dev Google Maps API üzerinden arama
-- Sayfalamayı otomatik yönetir
-- Kapsamlı işletme verilerini çıkarır
-- Koordinatlarla coğrafi hedefleme
+### What Makes This System Special?
 
-### 📧 Otomatik E-posta Zenginleştirme
-- Perplexity AI şirket e-postalarını buluyor
-- Web sitelerinden otomatik kazıma
-- Her işletme için arka plan araştırması
-- Google Sheets'i gerçek zamanlı günceller
+- 🤖 **Natural Language Interface** - Chat naturally as if speaking to a human assistant
+- 🧠 **AI-Powered Understanding** - GPT-4o intelligently interprets your requests
+- 🔄 **Automatic Enrichment** - Automatically finds emails and company backgrounds
+- 📊 **Smart Organization** - Structures data perfectly in Google Sheets
+- ⚡ **Real-Time Processing** - Watch leads populate as you chat
 
-### 🔄 İki Aşamalı Workflow
+### Who Is This For?
+
+| Target Audience | Use Case |
+|-----------------|----------|
+| 💼 **Sales Teams** | Targeted lead lists by location and niche |
+| 📞 **Cold Callers** | Get phone numbers and business info instantly |
+| 📧 **Email Marketers** | Contact info with email enrichment |
+| 🏢 **B2B Agencies** | Local business research for clients |
+| 🚀 **Entrepreneurs** | Find potential clients or partners |
+
+---
+
+## ✨ Key Features
+
+### 🗣️ Conversational Interface
+- Natural language input: *"Find 50 restaurants in NYC"*
+- No complex forms or parameters
+- AI understands context and intent
+- Multi-turn conversations
+
+### 🔍 Intelligent Google Maps Scraping
+- Search via Serper.dev Google Maps API
+- Automatically handles pagination
+- Extracts comprehensive business data
+- Geo-targeting with coordinates
+
+### 📧 Automated Email Enrichment
+- Perplexity AI finds company emails
+- Automatic web scraping from websites
+- Background research for every business
+- Real-time updates to Google Sheets
+
+### 🔄 Two-Stage Workflow
+
 
 ```
+
 ┌──────────────────────────────────────────────────────────┐
-│                    AŞAMA 1: VERİ TOPLAMA                 │
+│                   STAGE 1: DATA COLLECTION               │
 ├──────────────────────────────────────────────────────────┤
-│  Chat Trigger → AI Agent → Serper API → Alt Workflow     │
-│                                              ↓           │
-│                                    Google Sheets Kayıt   │
+│  Chat Trigger → AI Agent → Serper API → Sub-Workflow     │
+│                                           ↓              │
+│                                  Google Sheets Save      │
 └──────────────────────────────────────────────────────────┘
-                           ↓
+↓
 ┌──────────────────────────────────────────────────────────┐
-│                 AŞAMA 2: ZENGİNLEŞTİRME                  │
+│                   STAGE 2: ENRICHMENT                    │
 ├──────────────────────────────────────────────────────────┤
 │  Sheets Trigger → Perplexity AI → Email & Background     │
-│                                              ↓           │
-│                                    Sheets Güncelleme     │
+│                                           ↓              │
+│                                  Sheets Update           │
 └──────────────────────────────────────────────────────────┘
+
+```
+
+---
+
+## 🔄 How It Works
+
+### User Experience
+
+
+```
+
+You: "Extract info for 100 dental clinics in Los Angeles"
+
+AI Agent: "I'll search for dental clinics in Los Angeles. Starting now..."
+[Google Maps search]
+[Finds 100+ results across multiple pages]
+[Automatically saves to Google Sheets]
+
+AI Agent: "✅ Found and saved 97 dental clinics to your sheet!"
+
+[Background process starts automatically]
+[Enriches each lead with email and background]
+[Updates the sheet with enriched data]
+
 ```
 
 ---
 
-## 🔄 Nasıl Çalışır
+## 🛠️ Tech Stack
 
-### Kullanıcı Deneyimi
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Automation** | n8n | Workflow orchestration |
+| **AI Agent** | OpenAI GPT-4o | Natural language understanding & task execution |
+| **AI Memory** | Buffer Window | Conversation context retention |
+| **Map Search** | Serper.dev | Google Maps API for business data |
+| **Enrichment** | Perplexity AI (Sonar) | Email discovery & company research |
+| **Storage** | Google Sheets | Lead database |
+
+---
+
+## 📦 Requirements
+
+### Required Accounts & API Keys
+
+| Service | Required? | Purpose | Cost |
+|---------|-----------|---------|------|
+| **n8n** | ✅ Yes | Run workflows | Free (self-hosted) or $20/mo |
+| **OpenAI** | ✅ Yes | GPT-4o AI agent | ~$0.01-0.03 per request |
+| **Serper.dev** | ✅ Yes | Google Maps search | $50/mo for 5,000 searches |
+| **Perplexity AI** | ✅ Yes | Email enrichment | $20/mo or pay-per-use |
+| **Google Account** | ✅ Yes | Google Sheets storage | Free |
+
+---
+
+## 🚀 Installation
+
+> ⚠️ **IMPORTANT:** This system consists of 2 separate workflows. Both must be imported separately and linked together!
+
+### 📦 Workflow Files
+
+| File | Type | Description |
+|------|------|-------------|
+| `Google map ai agent.json` | **Main Workflow** | Chat interface and AI agent |
+| `Gooogle map lead ai agent.json` | **Sub-Workflow** | Data saving and UUID generation |
+
+---
+
+### Step 1: FIRST Import the Sub-Workflow
+
+> 🔴 **ORDER MATTERS!** The sub-workflow MUST be imported first!
+
+1. Open n8n
+2. Click **"Workflows"** → **"Import from File"**
+3. Select `Gooogle map lead ai agent.json`
+4. Click **"Import"**
+5. ✅ Once imported, **note down the workflow ID:**
+   - Visible in URL: `https://your-n8n.com/workflow/WORKFLOW_ID`
+
+---
+
+### Step 2: Import the Main Workflow
+
+1. Click **"Workflows"** → **"Import from File"**
+2. Select `Google map ai agent.json`
+3. Click **"Import"**
+
+---
+
+### Step 3: Link the Two Workflows
+
+> 🔗 The main workflow must be linked to call the sub-workflow!
+
+1. Open the main workflow
+2. Find the **"Call n8n Workflow Tool"** node
+3. Click on the node
+4. In the **"Workflow"** field:
+   - Select **"💥 xCodeWraith - Google Maps Lead Sub-Workflow"** from the dropdown
+
+---
+
+### Step 4: Create Google Sheet
+
+1. Go to https://sheets.google.com/
+2. Create a new spreadsheet named: **"Leads Google map ai agent"**
+3. Create headers in row 1:
+
 
 ```
-Siz: "Los Angeles'ta 100 diş kliniği için bilgi çıkar"
 
-AI Ajanı: "Los Angeles'ta diş kliniklerini arayacağım. Başlıyorum..."
-         [Google Haritalar araması]
-         [Birden fazla sayfada 100+ sonuç buluyor]
-         [Google Sheets'e otomatik kaydediyor]
-
-AI Ajanı: "✅ 97 diş kliniği buldum ve sayfanıza kaydettim!"
-
-[Arka plan işlemi otomatik başlar]
-         [Her potansiyel müşteriyi e-posta ve arka plan ile zenginleştirir]
-         [Sayfayı zenginleştirilmiş verilerle günceller]
-```
-
----
-
-## 🛠️ Teknoloji Yığını
-
-| Kategori | Teknoloji | Amaç |
-|----------|-----------|------|
-| **Otomasyon** | n8n | Workflow orkestrasyonu |
-| **AI Ajanı** | OpenAI GPT-4o | Doğal dil anlama ve görev yürütme |
-| **AI Bellek** | Buffer Window | Konuşma bağlamı saklama |
-| **Harita Arama** | Serper.dev | İşletme verileri için Google Maps API |
-| **Zenginleştirme** | Perplexity AI (Sonar) | E-posta bulma ve şirket araştırma |
-| **Depolama** | Google Sheets | Potansiyel müşteri veritabanı |
-
----
-
-## 📦 Gereksinimler
-
-### Gerekli Hesaplar & API Anahtarları
-
-| Servis | Gerekli mi? | Amaç | Maliyet |
-|--------|-------------|------|---------|
-| **n8n** | ✅ Evet | Workflow'ları çalıştır | Ücretsiz (self-hosted) veya $20/ay |
-| **OpenAI** | ✅ Evet | GPT-4o AI ajanı | İstek başına ~$0.01-0.03 |
-| **Serper.dev** | ✅ Evet | Google Haritalar araması | 5,000 arama için $50/ay |
-| **Perplexity AI** | ✅ Evet | E-posta zenginleştirme | $20/ay veya kullanım başına |
-| **Google Hesabı** | ✅ Evet | Google Sheets depolama | Ücretsiz |
-
----
-
-## 🚀 Kurulum
-
-> ⚠️ **ÖNEMLİ:** Bu sistem 2 ayrı workflow'dan oluşur. İkisi de ayrı ayrı import edilmeli ve birbirine bağlanmalıdır!
-
-### 📦 Workflow Dosyaları
-
-| Dosya | Tür | Açıklama |
-|-------|-----|----------|
-| `Google map ai agent.json` | **Ana Workflow** | Chat arayüzü ve AI ajanı |
-| `Gooogle map lead ai agent.json` | **Alt Workflow** | Veri kaydetme ve UUID oluşturma |
-
----
-
-### Adım 1: ÖNCELİKLE Alt Workflow'u İçe Aktarın
-
-> 🔴 **SIRA ÖNEMLİ!** Alt workflow ÖNCE import edilmeli!
-
-1. n8n'i açın
-2. **"Workflows"** → **"Import from File"** tıklayın
-3. `Gooogle map lead ai agent.json` seçin
-4. **"Import"** tıklayın
-5. ✅ Import edildikten sonra **workflow ID'sini not edin:**
-   - URL'de görünür: `https://your-n8n.com/workflow/WORKFLOW_ID`
-
----
-
-### Adım 2: Ana Workflow'u İçe Aktarın
-
-1. **"Workflows"** → **"Import from File"** tıklayın
-2. `Google map ai agent.json` seçin
-3. **"Import"** tıklayın
-
----
-
-### Adım 3: İki Workflow'u Birbirine Bağlayın
-
-> 🔗 Ana workflow, alt workflow'u çağırabilmesi için bağlanmalı!
-
-1. Ana workflow'u açın
-2. **"Call n8n Workflow Tool"** node'unu bulun
-3. Node'a tıklayın
-4. **"Workflow"** alanında:
-   - Dropdown'dan **"💥 xCodeWraith - Google Maps Lead Alt-Workflow"** seçin
-
----
-
-### Adım 4: Google Sheet Oluşturun
-
-1. https://sheets.google.com/ adresine gidin
-2. Yeni elektronik tablo oluşturun: **"Leads Google map ai agent"**
-3. 1. satırda başlıklar oluşturun:
-
-```
 UUID | Name | Address | Number | Website | Rating | Opening Hours | Email | Background
+
 ```
 
 ---
 
-### Adım 5: Google Sheets Node'larını Güncelleyin
+### Step 5: Update Google Sheets Nodes
 
-**Her iki workflow'da da** Google Sheets node'larını güncelleyin:
+Update Google Sheets nodes **in both workflows**:
 
-**Ana Workflow'da:**
-- `Google Sheets Trigger` node → Spreadsheet ID'nizi seçin
-- `Google Sheets` (update) node → Spreadsheet ID'nizi seçin
+**In Main Workflow:**
+- `Google Sheets Trigger` node → Select your Spreadsheet ID
+- `Google Sheets` (update) node → Select your Spreadsheet ID
 
-**Alt Workflow'da:**
-- `Append row in sheet` node → Spreadsheet ID'nizi seçin
-
----
-
-### Adım 6: Workflow'ları Aktifleştirin
-
-1. **Ana workflow'u** açın → **"Active"** toggle'ını açın (yeşil)
-2. **Alt workflow** pasif kalabilir (ana tarafından otomatik çağrılır)
-3. Ana workflow'daki **"When chat message received"** node'una tıklayın
-4. **"Production URL"** kopyalayın
-5. Bu URL'yi tarayıcıda açarak chat arayüzüne erişin!
+**In Sub-Workflow:**
+- `Append row in sheet` node → Select your Spreadsheet ID
 
 ---
 
-## ⚙️ Yapılandırma
+### Step 6: Activate Workflows
 
-### 1. OpenAI API Anahtarı
+1. Open the **Main workflow** → Toggle **"Active"** (green)
+2. The **Sub-workflow** can remain inactive (it is called automatically by the main one)
+3. Click the **"When chat message received"** node in the Main workflow
+4. Copy the **"Production URL"**
+5. Open this URL in a browser to access the chat interface!
+
+---
+
+## ⚙️ Configuration
+
+### 1. OpenAI API Key
 
 **Node:** "OpenAI Chat Model"
 
-1. https://platform.openai.com/api-keys adresinden API anahtarı alın
-2. n8n'de: **Settings** → **Credentials**
-3. **"OpenAi account"** kimlik bilgisi ekleyin
-4. API anahtarını yapıştırın
+1. Get API key from https://platform.openai.com/api-keys
+2. In n8n: **Settings** → **Credentials**
+3. Add **"OpenAi account"** credential
+4. Paste your API key
 
 ---
 
-### 2. Serper.dev API Anahtarı
+### 2. Serper.dev API Key
 
 **Node:** "Map Search Tool"
 
-1. https://serper.dev/ adresinden kayıt olun
-2. Dashboard'dan API anahtarı alın
-3. Node'da **Headers** bölümünü bulun
-4. `X-API-KEY` değerini anahtarınızla güncelleyin
+1. Sign up at https://serper.dev/
+2. Get API key from dashboard
+3. Find the **Headers** section in the node
+4. Update `X-API-KEY` value with your key
 
 ---
 
-### 3. Perplexity API Anahtarı
+### 3. Perplexity API Key
 
 **Node:** "Message a model1"
 
-1. https://www.perplexity.ai/settings/api adresinden API anahtarı alın
-2. n8n'de: **Settings** → **Credentials**
-3. **"Perplexity account"** kimlik bilgisi ekleyin
+1. Get API key from https://www.perplexity.ai/settings/api
+2. In n8n: **Settings** → **Credentials**
+3. Add **"Perplexity account"** credential
 
 ---
 
 ### 4. Google Sheets OAuth
 
-1. n8n'de: **Settings** → **Credentials**
-2. **"Google Sheets OAuth2 API"** ekleyin
-3. OAuth akışını takip edin
+1. In n8n: **Settings** → **Credentials**
+2. Add **"Google Sheets OAuth2 API"**
+3. Follow the OAuth flow
 
 ---
 
-## 📖 Kullanım Örnekleri
+## 📖 Usage Examples
 
-### Örnek 1: Basit Arama
+### Example 1: Simple Search
 
-```
-Siz: "Seattle'da 50 kahve dükkanı bul"
-
-AI: ✅ 47 kahve dükkanı buldum ve kaydettim!
-```
-
-### Örnek 2: Spesifik Niş
 
 ```
-Siz: "Los Angeles'ta 100 diş kliniği için bilgi çıkar"
 
-AI: Los Angeles'ta diş kliniklerini arıyorum...
-    100 sonuç = 5 sayfa taranacak
-    ✅ 97 diş kliniği kaydedildi!
+You: "Find 50 coffee shops in Seattle"
+
+AI: ✅ Found and saved 47 coffee shops!
+
+```
+
+### Example 2: Specific Niche
+
+
+```
+
+You: "Extract info for 100 dental clinics in Los Angeles"
+
+AI: Searching for dental clinics in Los Angeles...
+100 results = 5 pages to scan
+✅ 97 dental clinics saved!
+
 ```
 
 ---
 
-## 📊 Veri Alanları
+## 📊 Data Fields
 
-| Alan | Açıklama | Kaynak |
-|------|----------|--------|
-| **UUID** | Benzersiz tanımlayıcı | Otomatik oluşturulur |
-| **Name** | İşletme adı | Google Maps |
-| **Address** | Tam adres | Google Maps |
-| **Number** | Telefon numarası | Google Maps |
-| **Website** | Şirket web sitesi | Google Maps |
-| **Rating** | Google puanı | Google Maps |
-| **Opening Hours** | Çalışma saatleri | Google Maps |
-| **Email** | İletişim e-postası | Perplexity AI |
-| **Background** | Şirket açıklaması | Perplexity AI |
-
----
-
-## 🐛 Sorun Giderme
-
-| Sorun | Çözüm |
-|-------|-------|
-| Sohbet arayüzü yüklenmiyor | Ana workflow'un **Aktif** olduğunu doğrulayın |
-| Harita aramasından sonuç yok | Serper.dev API anahtarını kontrol edin |
-| Veriler Sheets'e kaydedilmiyor | Google Sheets credential'larını doğrulayın |
-| Alt workflow çalışmıyor | Workflow bağlantısını kontrol edin |
+| Field | Description | Source |
+|-------|-------------|--------|
+| **UUID** | Unique identifier | Auto-generated |
+| **Name** | Business name | Google Maps |
+| **Address** | Full address | Google Maps |
+| **Number** | Phone number | Google Maps |
+| **Website** | Company website | Google Maps |
+| **Rating** | Google rating | Google Maps |
+| **Opening Hours** | Operating hours | Google Maps |
+| **Email** | Contact email | Perplexity AI |
+| **Background** | Company description | Perplexity AI |
 
 ---
 
-## 📈 Performans Metrikleri
+## 🐛 Troubleshooting
 
-| Metrik | Değer |
+| Issue | Solution |
+|-------|----------|
+| Chat interface not loading | Verify Main workflow is **Active** |
+| No results from map search | Check Serper.dev API key |
+| Data not saving to Sheets | Verify Google Sheets credentials |
+| Sub-workflow not running | Check workflow connection link |
+
+---
+
+## 📈 Performance Metrics
+
+| Metric | Value |
 |--------|-------|
-| **Arama Hızı** | 2 saniyede sayfa başına 20 sonuç |
-| **Kazıma** | ~1 dakikada 100 potansiyel müşteri |
-| **Zenginleştirme** | ~5-10 dakikada 60 potansiyel müşteri |
-| **Doğruluk** | %90+ veri doğruluğu |
-| **Günlük Kapasite** | 5,000-10,000 potansiyel müşteri |
+| **Search Speed** | 20 results per page in 2 seconds |
+| **Scraping** | ~100 leads in 1 minute |
+| **Enrichment** | ~60 leads in 5-10 minutes |
+| **Accuracy** | 90%+ data accuracy |
+| **Daily Capacity** | 5,000-10,000 leads |
 
 ---
 
-## 📄 Lisans
+## 📄 License
 
-Bu proje **MIT Lisansı** altında lisanslanmıştır.
+This project is licensed under the **MIT License**.
 
-✅ Ticari kullanım izni  
-✅ Değişiklik izni  
-✅ Dağıtım izni  
-✅ Özel kullanım izni  
-⚠️ Garanti veya sorumluluk yok
-
----
-
-**💥 xCodeWraith tarafından ❤️ ile yapıldı**
-
-⭐ Potansiyel müşteri oluşturmanıza yardımcı oluyorsa bu repoyu yıldızlayın!
+✅ Commercial use allowed  
+✅ Modification allowed  
+✅ Distribution allowed  
+✅ Private use allowed  
+⚠️ No warranty or liability
 
 ---
 
-**Binlerce potansiyel müşteri oluşturmaya hazır mısınız?** Şimdi AI ajanınızla sohbet etmeye başlayın! 🗺️
+**💥 Made with ❤️ by xCodeWraith**
+
+⭐ Star this repo if it helps you generate leads!
+
+---
+
+**Ready to generate thousands of leads?** Start chatting with your AI agent now! 🗺️
+
+```
